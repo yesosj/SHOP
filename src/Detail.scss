@@ -1,0 +1,63 @@
+@import './reset.scss';
+
+$메인칼라 : #ff0000;
+
+
+.wow-enter{
+    opacity : 0;
+}
+//애니메이션 시작 때 적용할 CSS
+.wow-enter-active{
+    opacity : 1;
+    transition: all 500ms;
+}
+//애니메이션 동작 때 적용할 CSS
+
+@mixin 함수() {
+    background: #eee;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    
+}
+//@mixin 함수로 긴 css코드를 담아서 데이터 바인딩 시킴. 가져올땐 @include 앞에 붙이기.
+.red{
+    color: $메인칼라;
+}
+
+.my-alert{
+    @include 함수()
+}
+
+.my-alert2{
+    @extend .my-alert;
+    background: #ffe591;
+}
+//@extend .my-alert는 my-alert속성을 복붙하겠다는 의미.
+
+
+
+.my-alert p {
+    margin-bottom: 0px;
+}
+
+// div.container h4{
+//     color : blue;
+// }
+
+
+// div.container p{
+//     color : green;
+// }
+
+// div.container {
+//     h4{
+//         color: blue;
+//     }
+//     p{
+//         color : green;
+//     }
+// }
+//container 안에 자잘한 것들 한 꺼번에 해주는 nesting문법.
